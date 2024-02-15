@@ -61,6 +61,10 @@ collegedata.initialize().then(() => {
             res.json({message: "no results"});
         })
     })
+
+    app.use((req, res) => {
+        res.status(404).send("<h1>404 Error LMAO</h1>")
+    })
 }).then(() => {
     app.listen(HTTP_PORT, () => {console.log(`Server listening on port ${HTTP_PORT}`)});
 }).catch((err) => {
